@@ -131,7 +131,7 @@ button:active {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 100;
+  z-index: 99;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -147,7 +147,7 @@ button:active {
 }
 
 .menu--open .menu__backdrop {
-  visibility: visible;
+  visibility: visible !important;
   opacity: 1;
   transform: translate(0);
 }
@@ -183,14 +183,15 @@ LANDING
 */
 
 #landing {
-  background-color: rgba(115, 66, 214, 0.1)
+  background-color: rgba(118, 66, 214, 0.206);
 }
 
 header {
-  height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
 }
 
 .header__container {
+  padding-top: 32px;
   width: 100%;
   max-width: 720px;
   margin: 0 auto;
@@ -206,8 +207,38 @@ header {
   align-items: center;
 }
 
+h1 {
+  font-size: 56px;
+  color: rgb(125, 38, 240);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.btn {
+  background-color: rgb(125, 38, 240);
+  color: white;
+  padding: 12px 24px;
+  font-size: 20px;
+  border-radius: 4px;
+  border: none;
+}
+
 .header__img--wrapper {
-  padding: 20px;
+  padding: 43px;
 
   /* Added this after the tutorial to 
   show it over the wave on larger screens */
@@ -230,9 +261,10 @@ header {
   align-items: center;
 }
 
-.no-cursor {
-  cursor: not-allowed;
+.no__cursor {
+  cursor: no-drop;
 }
+
 /* 
 
 HIGHLIGHTS 
@@ -312,7 +344,7 @@ FEATURES
 
 #features {
   padding-top: 8vw;
-  background-color: rgba(115, 66, 214, 0.1);
+  background-color: rgba(73, 7, 226, 0.258);
 }
 
 .books {
@@ -329,6 +361,9 @@ FEATURES
   max-height: 380px;
   transition: all 300ms ease;
   cursor: not-allowed;
+  /* Added after tutorial to maintain image aspect ratio */
+  object-fit: contain;
+  object-position: left;
 }
 
 .book__img--wrapper {
@@ -360,7 +395,7 @@ FEATURES
 .book__price--normal {
   text-decoration: line-through;
   padding-right: 6px;
-  color: #bfbfbf;
+  color: #909090;
 }
 
 /* 
@@ -370,7 +405,7 @@ EXPLORE
 */
 
 #explore {
-  background-color: rgba(115, 66, 214, 0.1);
+  background-color: rgba(73, 7, 226, 0.258);
 }
 
 /* 
@@ -405,45 +440,110 @@ footer {
   padding: 0 8px;
 }
 
-/* SMALL PHONES, TABLETS, LARGE SMARTPHONES */
-@media (max-width: 768px) {
-  .header__description {
-    padding: 0 24px;
+/* 
+**
+
+BOOKS PAGE
+
+**
+*/
+
+#books__body {
+  background-color: rgba(73, 7, 226, 0.258);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#books__main {
+  flex: 1;
+}
+
+.books__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.books__header--title {
+  margin-bottom: 0;
+}
+
+select {
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid #dcdfe6;
+  color: #606266;
+  height: 40px;
+  line-height: 40px;
+  outline: none;
+  padding: 0 16px;
+  width: 100%;
+  max-width: 200px;
+}
+
+.books__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 60px;
+  font-size: 60px;
+  color: #7342d6;
+}
+
+.fa-spinner {
+  animation: rotate 600ms infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
   }
 
-  h1 {
-    font-size: 40px;
-  }
-
-  h2 {
-    font-size: 26px;
-  }
-
-  button {
-    font-size: 18px;
-  }
-
-  .book {
-    width: 50%;
+  100% {
+    transform: rotate(360deg);
   }
 }
 
+/* SMALL PHONES, TABLETS, LARGE SMARTPHONES */
+@media (max-width: 768px) {
+    .header__description {
+        padding: 0 24px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    button {
+        font-size: 18px;
+    }
+
+    .book {
+        width: 50%;
+    }
+}
 
 /* SMALL PHONES, LARGE SMARTPHONES */
 @media (max-width: 550px) {
-  .btn__menu {
-    display: block;
-  }
+    .nav__links {
+        display: none;
+    }
 
-  .nav__links {
-    display: none;
-  }
+    .btn__menu {
+        display: block; 
+    }
 
-  .highlight {
-    width: 100%;
-  }
+    .highlight {
+        width: 100%;
+    }
 
-  .highlight:not(:last-child) {
-    margin-bottom: 24px;
-  }
+    .highlight:not(:last-child) {
+        margin-bottom: 24px;
+    }
 }
