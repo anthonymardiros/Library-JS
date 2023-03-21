@@ -48,7 +48,7 @@ li {
 
 h1 {
   font-size: 56px;
-  color: #7342d6;
+  color: rgb(125, 38, 240);
   margin-bottom: 24px;
   text-align: center;
 }
@@ -68,7 +68,7 @@ button:active {
 }
 
 .btn {
-  background-color: #7342d6;
+  background-color: rgb(125, 38, 240);
   color: white;
   padding: 12px 24px;
   font-size: 20px;
@@ -77,7 +77,7 @@ button:active {
 }
 
 .purple {
-  color: #7342d6;
+  color: rgb(125, 38, 240);
 }
 
 .logo {
@@ -98,7 +98,7 @@ button:active {
   margin-left: 16px;
   text-decoration: none;
   font-size: 20px;
-  color: #7342d6;
+  color: rgb(125, 38, 240);
   font-weight: bold;
   padding: 8px;
 }
@@ -120,7 +120,7 @@ button:active {
   background-color: transparent;
   font-size: 40px;
   border: none;
-  color: #7342d6;
+  color: rgb(125, 38, 240);
   display: none;
 }
 
@@ -220,14 +220,6 @@ h2 {
   text-align: center;
 }
 
-button {
-  cursor: pointer;
-}
-
-button:active {
-  transform: translateY(1px);
-}
-
 .btn {
   background-color: rgb(125, 38, 240);
   color: white;
@@ -319,7 +311,7 @@ HIGHLIGHTS
 
 .highlight__img {
   border: 2px solid #7342d65d;
-  color: #7342d6;
+  color: rgb(125, 38, 240);
   width: 100px;
   height: 100px;
   display: flex;
@@ -396,6 +388,18 @@ FEATURES
   text-decoration: line-through;
   padding-right: 6px;
   color: #909090;
+}
+
+.btn__books {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 30px;
+  background-color: rgb(125, 38, 240);
+  color: white;
+  padding: 12px 24px;
+  font-size: 20px;
+  border-radius: 4px;
+  border: none;
 }
 
 /* 
@@ -489,7 +493,15 @@ select {
   justify-content: center;
   padding-top: 60px;
   font-size: 60px;
-  color: #7342d6;
+  color: rgb(125, 38, 240);
+}
+
+.books__loading--spinner {
+  display: none;
+}
+
+.books__loading .books__loading--spinner {
+  display: block;
 }
 
 .fa-spinner {
